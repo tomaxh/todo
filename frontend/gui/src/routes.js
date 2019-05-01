@@ -6,7 +6,7 @@ import About from './page/About'
 const BaseRouter = () => (
 
     <div>
-
+        <Route exact path='/' component={TodoListView} />
         <Route exact path='/todo' component={TodoListView} />
         <Route exact path='/todo/:todoID' component={TodoDetailView} />
         <Route exact path='/about' component={About} />
