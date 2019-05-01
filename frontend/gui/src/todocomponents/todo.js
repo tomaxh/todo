@@ -1,5 +1,5 @@
 import React from 'react'
-import { List, Avatar, Button, Alert, Badge } from 'antd';
+import { List, Avatar, Button, Alert, Badge, Tooltip } from 'antd';
 import axios from 'axios'
 import TodoForm from '../todocomponents/form'
 
@@ -97,11 +97,17 @@ class Todo extends React.Component {
                                 description={item.in_progress ? "State: In Progress" : "State: Todo"}
                             />
                             {new Date(item.due_date) > new Date() ? <Alert message={'Due: ' + item.due_date} /> : <Alert message={'Past Due: ' + item.due_date} type='error' />}
-                            <Button type="Default" icon="check" style={btnStyle} onClick={(e) => this.handleComplete(e, item)}></Button>
-                            <Button type="Default" icon="loading" style={btnStyle} onClick={(e) => this.handleProgress(e, item)}></Button>
+                            <Tooltip placement="topLeft" title="Task Done">
+                                <Button type="Default" icon="check" style={btnStyle} onClick={(e) => this.handleComplete(e, item)}></Button>
+                            </Tooltip>
+                            <Tooltip placement="topLeft" title="Task in Progress">
 
-                            <Button type="danger" icon="delete" style={btnStyle} onClick={(e) => this.handleDelete(e, item)}></Button>
+                                <Button type="Default" icon="loading" style={btnStyle} onClick={(e) => this.handleProgress(e, item)}></Button>
+                            </Tooltip>
+                            <Tooltip placement="topLeft" title="Delete Task">
 
+                                <Button type="danger" icon="delete" style={btnStyle} onClick={(e) => this.handleDelete(e, item)}></Button>
+                            </Tooltip>
                         </List.Item>
                     )}
                 />

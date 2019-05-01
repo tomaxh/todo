@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { Card, Avatar, Button } from 'antd';
+import { Card, Avatar, Button, Badge } from 'antd';
 
 const { Meta } = Card;
 
@@ -64,8 +64,13 @@ class TodoDetailView extends React.Component {
     }
 
     render() {
-        console.log(this.state.todo)
+        const avatarStyleDone = {
+            backgroundColor: 'Green'
+        }
 
+        const avatarStyleProgress = {
+            backgroundColor: 'orange'
+        }
         return (
 
 
@@ -73,7 +78,7 @@ class TodoDetailView extends React.Component {
                 style={{ width: '99%' }}
             >
                 <Meta
-                    avatar={<Avatar src="" />}
+                    avatar={this.state.todo.is_finished ? <Avatar style={avatarStyleDone} icon='calendar' /> : this.state.todo.in_progress ? <Avatar icon='loading' style={avatarStyleProgress} /> : <Badge dot><Avatar icon="calendar" /></Badge>}
                     title={this.state.todo.title}
                     description={this.state.todo.is_finished ? "State: Done." : this.state.todo.in_progress ? "State: In progress." : "State: Todo."}
 
