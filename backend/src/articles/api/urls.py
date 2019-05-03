@@ -6,4 +6,5 @@ from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 router.register(r'todo', TodoViewSet, base_name='todos')
 
+
 urlpatterns = router.urls

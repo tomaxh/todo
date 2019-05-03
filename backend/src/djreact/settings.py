@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'articles',
     'rest_framework',
     'corsheaders',
+    'rest_framework_bulk'
 ]
 
 MIDDLEWARE = [
