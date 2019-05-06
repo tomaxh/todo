@@ -50,5 +50,3 @@ class TodoViewByState(generics.ListAPIView):
             return queryset.filter(in_progress=False)
         elif (state == 'not_finished'):
             return queryset.filter(in_progress=False)
-
-        return False
