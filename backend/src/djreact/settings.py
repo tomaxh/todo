@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'articles',
     'rest_framework',
     'corsheaders',
-    'rest_framework_bulk'
 ]
 
 MIDDLEWARE = [
@@ -52,7 +51,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
- 
+
 ]
 
 ROOT_URLCONF = 'djreact.urls'
@@ -134,4 +133,4 @@ REST_FRAMEWORK = {
     ]
 }
 
-CORS_ORIGIN_ALLOW_ALL=True
+CORS_ORIGIN_ALLOW_ALL = True
